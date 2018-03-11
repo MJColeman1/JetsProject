@@ -22,26 +22,21 @@ public class JetsApplication {
 
 	}
 
-	
 	private static void welcome() {
 		System.out.println("Welcome to the Jets application.");
 	}
-	
+
 	private static void displayUserMenu() {
 		System.out.println("Menu: \n 1. List Fleet\n 2. Fly all jets\n 3. View fastest jet\n 4. "
 				+ "View jet with longest range\n 5. Load all Cargo Jets\n 6. Dogfight!\n "
 				+ "7. Add a jet to the Fleet\n 8. Quit");
-		System.out.print("To get started, please select an option (1-7 or 8 to quit): ");
+		System.out.print("To continue, please select an option (1-7 or 8 to quit): ");
 		int answer = kb.nextInt();
 		boolean flag = true;
 		while (flag)
 			switch (answer) {
 			case 1:
-				for (int i = 0; i < airfield.getArrayOfJets().length; i++) {
-					if (airfield.getArrayOfJets()[i] != null) {
-						System.out.println(airfield.getArrayOfJets()[i].toString());
-					}
-				}
+				listFleet();
 				flag = false;
 				displayUserMenu();
 				break;
@@ -132,10 +127,18 @@ public class JetsApplication {
 			default:
 				if (answer < 1 || answer > 8) {
 					System.out.println("That is not a valid input. Please try again.");
-					System.out.print("To get started, please select an option (1-7 or 8 to quit): ");
+					System.out.print("To continue, please select a valid option (1-7 or 8 to quit): ");
 					answer = kb.nextInt();
 					break;
 				}
 			}
+	}
+
+	public static void listFleet() {
+		for (int i = 0; i < airfield.getArrayOfJets().length; i++) {
+			if (airfield.getArrayOfJets()[i] != null) {
+				System.out.println(airfield.getArrayOfJets()[i].toString());
+			}
+		}
 	}
 }

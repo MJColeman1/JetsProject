@@ -27,19 +27,18 @@ public class Airfield {
 	public void setArrayOfJets(Jet[] arrayOfJets) {
 		this.arrayOfJets = arrayOfJets;
 	}
-	
-	public void loadCargoPlanes () {
+
+	public void loadCargoPlanes() {
 		for (int i = 0; i < arrayOfJets.length; i++) {
-				if (getArrayOfJets()[i] == null) {
-					break;
-				}
-				if (arrayOfJets[i].getClass() == CargoPlane.class) {
-					((CargoPlane) arrayOfJets[i]).loadCargo();
+			if (getArrayOfJets()[i] == null) {
+				break;
 			}
+			if (arrayOfJets[i].getClass() == CargoPlane.class) {
+				((CargoPlane) arrayOfJets[i]).loadCargo();
 			}
 		}
-	
-	
+	}
+
 	public void addJet(Jet jet) {
 		for (int i = 0; i < arrayOfJets.length; i++) {
 			if (arrayOfJets[i] == null) {
@@ -48,5 +47,5 @@ public class Airfield {
 			}
 		}
 	}
-	
+
 }

@@ -5,7 +5,7 @@ public class Jet {
 	private double speed;
 	private int range;
 	private long price;
-
+	
 	public Jet() {
 
 	}
@@ -45,7 +45,7 @@ public class Jet {
 		builder.append("");
 		return builder.toString();
 	}
-
+	
 	public String getModel() {
 		return model;
 	}
